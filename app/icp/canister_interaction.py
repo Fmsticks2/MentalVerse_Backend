@@ -1,10 +1,11 @@
 import requests
 
-CANISTER_ID = "bkyz2-fmaaa-aaaaa-qaaaq-cai"  # Ensure this is correct
+CANISTER_ID = "amwkh-wyaaa-aaaaj-azuaa-cai"  # Ensure this is correct
+# https://a4gq6-oaaaa-aaaab-qaa4q-cai.raw.icp0.io/?id=amwkh-wyaaa-aaaaj-azuaa-cai
 
 
 def call_icp_canister(method_name: str, payload: dict):
-    canister_url = f"http://127.0.0.1:4943/?canisterId={CANISTER_ID}"
+    canister_url = f"https://a4gq6-oaaaa-aaaab-qaa4q-cai.raw.icp0.io/?id={CANISTER_ID}"
     try:
         response = requests.post(canister_url, json={"method": method_name, "args": payload})
         response.raise_for_status()
